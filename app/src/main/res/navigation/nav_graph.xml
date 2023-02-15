@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.jekis.countries.ui.main.MainFragment"
+        android:label="List of countries"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailedCountryFragment"
+            app:destination="@id/detailedCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedCountryFragment"
+        android:name="com.jekis.countries.ui.main.DetailedCountryFragment"
+        android:label="Details of country" >
+        <action
+            android:id="@+id/action_detailedCountryFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="countryName"
+            app:argType="string" />
+        <argument
+            android:name="flagUrl"
+            app:argType="string" />
+        <argument
+            android:name="capital"
+            app:argType="string" />
+        <argument
+            android:name="region"
+            app:argType="string" />
+        <argument android:name="currency"
+            app:argType="string" />
+        <argument
+            android:name="timeZone"
+            app:argType="string" />
+    </fragment>
+</navigation>
