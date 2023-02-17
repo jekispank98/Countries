@@ -10,7 +10,7 @@ import com.jekis.countries.network.CountryApi
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class MainViewModel : ViewModel() {
+class MainViewModel() : ViewModel() {
 
     private var _dataList = MutableLiveData<Response<CountryName>>()
     val dataList: LiveData<Response<CountryName>> = _dataList

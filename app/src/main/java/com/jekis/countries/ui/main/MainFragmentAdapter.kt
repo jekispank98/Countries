@@ -41,22 +41,19 @@ class MainFragmentAdapter(private val context: Context) :
         val country = countryList[position]
         val uri = country.flags.png
         Glide.with(context).load(uri).into(holder.countryFlag)
-
-        holder.apply {
-            countryName.text = country.name
-            itemView.setOnClickListener {
-
-                val action = MainFragmentDirections.actionMainFragmentToDetailedCountryFragment(
-                    country.name,
-                    uri,
-                    country.capital,
-                    country.region,
-                    country.currencies[0].name,
-                    country.timezones[0]
-                )
-                itemView.findNavController().navigate(action)
-            }
+        holder.countryName.text = country.name
+        holder.itemView.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToDetailedCountryFragment(
+                country.name,
+                uri,
+                country.capital,
+                country.region,
+                country.currencies[0].name,
+                country.timezones[0]
+            )
+            holder.itemView.findNavController().navigate(action)
         }
+
     }
 
     override fun getItemCount(): Int {
