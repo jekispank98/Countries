@@ -1,5 +1,5 @@
 # Countries
-Test Task
+Test Task.
 It's necessary to creaye an application, that will consist from two screens. First screen will display list of countries and update button. 
 For every item, it will show county's name and flag. The app load data from server after clicking on the button.
 Second screen displays detailed information about choosed country. Flag, name, region, capital, currency and time zone. Tapping back navigates to first screen.
