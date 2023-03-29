@@ -19,7 +19,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentMainBinding.inflate(inflater, container, false)
+        binding = FragmentMainBinding.inflate(inflater, container, false)
         recyclerView = binding.rvListOfCountry
         adapter = MainFragmentAdapter(requireContext())
         recyclerView.adapter = adapter
@@ -27,5 +27,12 @@ class MainFragment : Fragment() {
             list.body()?.let { adapter.setList(it) }
         }
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.buttonUpdateData.setOnClickListener {
+            viewModel.getDataFromApi()
+        }
     }
 }

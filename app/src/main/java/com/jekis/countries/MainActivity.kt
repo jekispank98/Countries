@@ -1,17 +1,11 @@
 package com.jekis.countries
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.jekis.countries.databinding.ActivityMainBinding
-import com.jekis.countries.databinding.FragmentMainBinding
-import com.jekis.countries.ui.main.DetailedCountryFragment
-import com.jekis.countries.ui.main.MainFragment
-import com.jekis.countries.ui.main.MainFragmentDirections
 
 class MainActivity : AppCompatActivity() {
 
