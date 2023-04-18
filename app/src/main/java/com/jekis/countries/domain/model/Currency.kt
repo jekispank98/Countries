@@ -1,4 +1,4 @@
-package com.jekis.countries.model
+package com.jekis.countries.domain.model
 
 data class Currency(
     val code: String,

@@ -1,4 +1,4 @@
-package com.jekis.countries.model
+package com.jekis.countries.domain.model
 
 data class Flags(
     val png: String,

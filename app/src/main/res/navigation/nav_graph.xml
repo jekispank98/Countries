@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.jekis.countries.ui.main.MainFragment"
+        android:name="com.jekis.countries.ui.MainFragment"
         android:label="List of countries"
         tools:layout="@layout/fragment_main" >
         <action
@@ -16,27 +16,13 @@
     </fragment>
     <fragment
         android:id="@+id/detailedCountryFragment"
-        android:name="com.jekis.countries.ui.main.DetailedCountryFragment"
+        android:name="com.jekis.countries.ui.DetailedCountryFragment"
         android:label="Details of country" >
         <action
             android:id="@+id/action_detailedCountryFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
         <argument
             android:name="countryName"
-            app:argType="string" />
-        <argument
-            android:name="flagUrl"
-            app:argType="string" />
-        <argument
-            android:name="capital"
-            app:argType="string" />
-        <argument
-            android:name="region"
-            app:argType="string" />
-        <argument android:name="currency"
-            app:argType="string" />
-        <argument
-            android:name="timeZone"
             app:argType="string" />
     </fragment>
 </navigation>

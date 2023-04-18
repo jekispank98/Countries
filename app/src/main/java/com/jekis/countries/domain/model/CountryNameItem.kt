@@ -1,6 +1,4 @@
-package com.jekis.countries.model
-
-import com.google.gson.JsonObject
+package com.jekis.countries.domain.model
 
 data class CountryNameItem(
     val independent: Boolean,
