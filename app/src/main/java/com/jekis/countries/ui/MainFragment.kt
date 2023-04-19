@@ -10,7 +10,8 @@ import com.jekis.countries.databinding.FragmentMainBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MainFragment : Fragment() {
-    private lateinit var binding: FragmentMainBinding
+    private var _binding: FragmentMainBinding? = null
+    val binding get() = _binding!!
     private lateinit var adapter: MainFragmentAdapter
     private lateinit var recyclerView: RecyclerView
     private val viewModel: MainViewModel by sharedViewModel()
@@ -18,9 +19,9 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewModel.getListOfCountryData()
-        binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         recyclerView = binding.rvListOfCountry
         adapter = MainFragmentAdapter(requireContext())
         recyclerView.adapter = adapter
@@ -35,5 +36,9 @@ class MainFragment : Fragment() {
         binding.buttonUpdateData.setOnClickListener {
             viewModel.getListOfCountryData()
         }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }
